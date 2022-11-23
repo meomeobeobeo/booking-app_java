@@ -49,7 +49,7 @@ public class patients_infor_form extends JFrame {
                // check
                 text_field_rules rules = new text_field_rules();
                 boolean check_required = rules.check_required(patient_name_fieldText)
-                        && rules.check_required(patient_name_fieldText)
+                        && rules.check_required(address_patient_fieldText)
                         && rules.check_required(phone_number_fieldText)
                         && rules.check_required(email_patient_fieldText) ;;
                 boolean check_email = rules.check_isMail(email_patient_fieldText);
@@ -74,7 +74,9 @@ public class patients_infor_form extends JFrame {
                     /// call method to save in database
                 }
                 else{
-                    JOptionPane.showMessageDialog(patient_infor,errors);
+                    if(err.size() != 0){
+                        JOptionPane.showMessageDialog(patient_infor,errors);
+                    }
                 }
             }
         });

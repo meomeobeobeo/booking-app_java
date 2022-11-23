@@ -32,5 +32,23 @@ public class text_field_rules {
         }
         return true;
     }
+    public  boolean check_isAge (String value){
+        if (value == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(value);
+            if(!(1< d && d < 150)){
+                return false;
+            }
+
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+
+
 
 }
